@@ -72,8 +72,8 @@ export function MeshAnim({
   useFrame(() => {
     t = update(t);
 
-    positions = posRef.current!;
-    colors = colorRef.current!;
+    positions = (posRef.current as any).array;
+    colors = (colorRef.current as any).array;
     console.log(positions, colors);
     let i = 0;
     for (let yi = 0; yi < height; yi++) {
@@ -129,7 +129,7 @@ export function MeshAnim({
       <meshStandardMaterial
         vertexColors
         side={THREE.DoubleSide}
-        // wireframe={true}
+        wireframe={true}
       />
     </mesh>
   );

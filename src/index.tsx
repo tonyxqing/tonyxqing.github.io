@@ -12,11 +12,12 @@ ReactDOM.render(
   <Router>
     <React.StrictMode>
       <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="About" element={<About />} />
-        <Route path="Portfolio" element={<Portfolio />} />
-        <Route path="Test" element={<Frogger />}>
-          <Route path=":MeshType" element={<Frogger />} />
+        <Route path="/" element={<App />}>
+          <Route path="About" element={<About />} />
+          <Route path="Portfolio" element={<Portfolio />} />
+          <Route path="Demos" element={<Frogger />}>
+            <Route path=":MeshType" element={<Frogger />} />
+          </Route>
         </Route>
       </Routes>
     </React.StrictMode>

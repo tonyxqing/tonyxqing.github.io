@@ -25,9 +25,9 @@ export default function Frogger() {
   return (
     <div>
       <div>
-        <Link to="/Test/GrowingExp">GrowingExp</Link>
-        <Link to="/Test/Ripple"> Ripple </Link>
-        <Link to="/Test/Terrain"> Terrain </Link>
+        <Link to="/Demos/GrowingExp">GrowingExp</Link>
+        <Link to="/Demos/Ripple"> Ripple </Link>
+        <Link to="/Demos/Terrain"> Terrain </Link>
       </div>
       {mesh}
     </div>
