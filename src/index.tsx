@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./components/About";
 import Frogger from "./components/Frogger";
 import Portfolio from "./components/Portfolio";
+
 ReactDOM.render(
   <Router>
     <React.StrictMode>
@@ -14,7 +15,9 @@ ReactDOM.render(
         <Route path="/" element={<App />} />
         <Route path="About" element={<About />} />
         <Route path="Portfolio" element={<Portfolio />} />
-        <Route path="Test" element={<Frogger />} />
+        <Route path="Test" element={<Frogger />}>
+          <Route path=":MeshType" element={<Frogger />} />
+        </Route>
       </Routes>
     </React.StrictMode>
   </Router>,
