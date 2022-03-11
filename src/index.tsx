@@ -8,11 +8,16 @@ import About from "./components/About";
 import Frogger from "./components/Frogger";
 import Portfolio from "./components/Portfolio";
 
+const Home = () => {
+  return <div></div>;
+};
+
 ReactDOM.render(
   <Router>
     <React.StrictMode>
       <Routes>
         <Route path="/" element={<App />}>
+          <Route index element={<Home />} />
           <Route path="About" element={<About />} />
           <Route path="Portfolio" element={<Portfolio />} />
           <Route path="Demos" element={<Frogger />}>

@@ -19,6 +19,17 @@ const {
   MenuIcon,
 } = icons;
 function ButtonAppBar(props: any) {
+  const iconItems = [
+    { href: "https://github.com/tonyxqing", icon: <GitHubIcon /> },
+    {
+      href: "https://www.linkedin.com/in/tony-qing-123600192/",
+      icon: <LinkedInIcon />,
+    },
+    {
+      href: "https://www.facebook.com/tony.qing.904/",
+      icon: <FacebookOutlinedIcon />,
+    },
+  ];
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar sx={{ backgroundColor: "#2c2c2c" }} position="static">
@@ -36,39 +47,19 @@ function ButtonAppBar(props: any) {
             return <Button color="inherit">{child}</Button>;
           })}
           <div style={{ flexGrow: 1 }}></div>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-            href="https://github.com/tonyxqing"
-            target="_blank"
-          >
-            <GitHubIcon />
-          </IconButton>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-            href="https://www.linkedin.com/in/tony-qing-123600192/"
-            target="_blank"
-          >
-            <LinkedInIcon />
-          </IconButton>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-            href="https://www.facebook.com/tony.qing.904/"
-            target="_blank"
-          >
-            <FacebookOutlinedIcon />
-          </IconButton>
+          {iconItems.map((item) => (
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={{ mr: 2 }}
+              href={item.href}
+              target="_blank"
+            >
+              {item.icon}
+            </IconButton>
+          ))}
         </Toolbar>
       </AppBar>
     </Box>
@@ -79,7 +70,7 @@ function App() {
     <div className="App">
       <ButtonAppBar>
         <Link className="App-link" to="/About">
-          About Me
+          About
         </Link>
         <Link className="App-link" to="/Portfolio">
           Portfolio
