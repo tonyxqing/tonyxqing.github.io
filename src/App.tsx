@@ -146,11 +146,7 @@ function App() {
       color: theme.palette.background.default,
       update: chooseColor.pickDefaultColor,
     },
-    {
-      name: "this",
-      color: theme.palette.background.paper,
-      update: chooseColor.pickPaperColor,
-    },
+
     {
       name: "text",
       color: theme.palette.text.primary,
@@ -161,6 +157,11 @@ function App() {
       color: theme.palette.text.secondary,
 
       update: chooseColor.pickSecondaryColor,
+    },
+    {
+      name: "this",
+      color: theme.palette.background.paper,
+      update: chooseColor.pickPaperColor,
     },
   ];
   const toggleTheme = useThemeUpdate();
@@ -182,7 +183,7 @@ function App() {
               <MenuIcon />
             </IconButton>
             <>
-              {["", "About", "Portfolio", "Demos", "Contact"].map((text) => (
+              {["", "About", "Portfolio", "Contact"].map((text) => (
                 <Link to={`/${text.toLowerCase()}`}>
                   <Button
                     sx={{
@@ -282,7 +283,7 @@ function App() {
           />
           <Divider />
           <List>
-            {["", "About", "Portfolio", "Demos", "Contact"].map((text) => (
+            {["", "About", "Portfolio", "Contact"].map((text) => (
               <Link
                 style={{ textDecoration: "none" }}
                 to={`/${text.toLowerCase()}`}

@@ -66,7 +66,9 @@ export default function Contact() {
           fullWidth
           color="inherit"
           variant="outlined"
-          onClick={() => alert("this box is a WIP")}
+          target="_top"
+          rel="noopener noreferrer"
+          href={`mailto:tony.qing+website@gmail.com`}
         >
           Send
         </Button>
