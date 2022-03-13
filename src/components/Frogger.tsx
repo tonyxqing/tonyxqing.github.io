@@ -3,7 +3,7 @@ import World from "./Frogger/World";
 import { Link } from "react-router-dom";
 import { GrowingExp, Ripple, Terrain } from "./Frogger/MeshTypes";
 import { useParams } from "react-router-dom";
-
+import { Box, Typography } from "@mui/material";
 // usinfg react-three-fiber which allows us to use three.js more declaritvely.
 export default function Frogger() {
   const meshtype = useParams().MeshType;
@@ -19,17 +19,28 @@ export default function Frogger() {
         }
       />
     ) : (
-      <></>
+      <Box
+        sx={{
+          display: "block",
+          height: "80vh",
+          backgroundColor: "background.default",
+        }}
+      ></Box>
     );
   }, [meshtype]);
   return (
-    <div>
-      <div>
+    <Box>
+      <Box
+        sx={{
+          display: "flex",
+        }}
+      >
         <Link to="/Demos/GrowingExp">GrowingExp</Link>
         <Link to="/Demos/Ripple"> Ripple </Link>
         <Link to="/Demos/Terrain"> Terrain </Link>
-      </div>
+      </Box>
+
       {mesh}
-    </div>
+    </Box>
   );
 }
