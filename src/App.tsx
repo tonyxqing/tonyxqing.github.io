@@ -22,9 +22,8 @@ import {
   ToggleButtonGroup,
 } from "@mui/material";
 import { ColorPicker, createColor, Color } from "mui-color";
-
 import { useThemeUpdate, useColorPicker } from "./ThemeContext";
-
+import useMediaQuery from "@mui/material/useMediaQuery";
 import ListItemText from "@mui/material/ListItemText";
 
 const drawerWidth = 240;
@@ -109,6 +108,8 @@ const iconItems = [
 ];
 
 function App() {
+  const theme = useTheme();
+
   const [openDrawer, setOpenDrawer] = useState<boolean>(false);
   const handleDrawerOpen = () => setOpenDrawer(true);
   const handleDrawerClose = () => setOpenDrawer(false);
@@ -124,8 +125,7 @@ function App() {
   const chooseColor = useColorPicker();
 
   const [nightMode, setNightMode] = useState<boolean>(false);
-  const theme = useTheme();
-
+  const matches = useMediaQuery(theme.breakpoints.up("sm"));
   const [pickToggleBtn, setPickToggleBtn] = React.useState<{
     name: string;
     color: any;
@@ -171,68 +171,75 @@ function App() {
       <Box>
         <AppBar position="static" open={openDrawer}>
           <Toolbar sx={{ backgroundColor: "primary.main" }}>
-            <IconButton
-              sx={{
-                color: "text.primary",
-              }}
-              size="large"
-              edge="start"
-              aria-label="menu"
-              onClick={handleDrawerOpen}
-            >
-              <MenuIcon />
-            </IconButton>
-            <>
-              {["", "About", "Portfolio", "Contact"].map((text) => (
-                <Link to={`/${text.toLowerCase()}`}>
-                  <Button
-                    sx={{
-                      color: "text.primary",
-                      textTransform: "capitalize",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    {text === "" ? "Home" : text}
-                  </Button>
-                </Link>
-              ))}
-              <div style={{ flexGrow: 1 }}></div>
-              <FormControlLabel
+            {!matches ? (
+              <IconButton
                 sx={{
-                  justifyContent: "center",
-                  alignItems: "end",
-                  paddingRight: 3,
                   color: "text.primary",
                 }}
-                value="night mode"
-                label={
-                  !nightMode ? <Brightness5OutlinedIcon /> : <Brightness4Icon />
-                }
-                labelPlacement="start"
-                control={<Switch defaultChecked color="warning" />}
-                checked={nightMode}
-                onChange={() => {
-                  setNightMode(!nightMode);
-                  toggleTheme.toggleColorMode();
-                }}
-              />
-
-              {iconItems.map((item, i) => (
-                <IconButton
-                  size="large"
-                  edge="start"
-                  sx={
-                    i !== iconItems.length - 1
-                      ? { mr: 2, color: "text.primary" }
-                      : { color: "text.primary" }
+                size="large"
+                edge="start"
+                aria-label="menu"
+                onClick={handleDrawerOpen}
+              >
+                <MenuIcon />
+              </IconButton>
+            ) : (
+              <>
+                {["", "About", "Portfolio", "Contact"].map((text) => (
+                  <Link to={`/${text.toLowerCase()}`}>
+                    <Button
+                      sx={{
+                        color: "text.primary",
+                        textTransform: "capitalize",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      {text === "" ? "Home" : text}
+                    </Button>
+                  </Link>
+                ))}
+                <div style={{ flexGrow: 1 }}></div>
+                <FormControlLabel
+                  sx={{
+                    justifyContent: "center",
+                    alignItems: "end",
+                    paddingRight: 3,
+                    color: "text.primary",
+                  }}
+                  value="night mode"
+                  label={
+                    !nightMode ? (
+                      <Brightness5OutlinedIcon />
+                    ) : (
+                      <Brightness4Icon />
+                    )
                   }
-                  href={item.href}
-                  target="_blank"
-                >
-                  {item.icon}
-                </IconButton>
-              ))}
-            </>
+                  labelPlacement="start"
+                  control={<Switch defaultChecked color="warning" />}
+                  checked={nightMode}
+                  onChange={() => {
+                    setNightMode(!nightMode);
+                    toggleTheme.toggleColorMode();
+                  }}
+                />
+
+                {iconItems.map((item, i) => (
+                  <IconButton
+                    size="large"
+                    edge="start"
+                    sx={
+                      i !== iconItems.length - 1
+                        ? { mr: 2, color: "text.primary" }
+                        : { color: "text.primary" }
+                    }
+                    href={item.href}
+                    target="_blank"
+                  >
+                    {item.icon}
+                  </IconButton>
+                ))}
+              </>
+            )}
           </Toolbar>
         </AppBar>
         <Drawer
@@ -350,6 +357,31 @@ function App() {
               </DialogContent>
             </Dialog>
           </List>
+          <div style={{ flexGrow: 1 }}></div>
+
+          <Box
+            sx={{
+              display: "flex",
+              margin: theme.spacing(2),
+              justifyContent: "space-evenly",
+            }}
+          >
+            {iconItems.map((item, i) => (
+              <IconButton
+                size="large"
+                edge="start"
+                sx={
+                  i !== iconItems.length - 1
+                    ? { mr: 2, color: "text.primary" }
+                    : { color: "text.primary" }
+                }
+                href={item.href}
+                target="_blank"
+              >
+                {item.icon}
+              </IconButton>
+            ))}
+          </Box>
         </Drawer>
       </Box>
 

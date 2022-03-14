@@ -2,7 +2,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { PaletteMode, PaletteOptions, Box } from "@mui/material";
 import React, { useContext, useMemo } from "react";
 import { Color, createColor } from "mui-color";
-import { grey, amber } from "@mui/material/colors";
+import { grey } from "@mui/material/colors";
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
 const ColorPickerContext = React.createContext({
@@ -38,7 +38,7 @@ export default function ThemeContext({ children }: { children: JSX.Element }) {
 
   const [main, setMain] = React.useState(createColor("#FDF9BB"));
   const [background, setBackground] = React.useState(createColor("#FCFCE3"));
-  const [paper, setPaper] = React.useState(createColor(amber[500]));
+  const [paper, setPaper] = React.useState(createColor("#F1E0AC"));
   const [primary, setPrimary] = React.useState(createColor("#B1953A"));
   const [secondary, setSecondary] = React.useState(createColor("#1C0101"));
   const ColorPicker = React.useMemo(
@@ -68,7 +68,7 @@ export default function ThemeContext({ children }: { children: JSX.Element }) {
         palette: {
           mode,
           primary: {
-            ...amber,
+            ...grey,
             ...(mode === "light"
               ? {
                   main: main.css.backgroundColor,

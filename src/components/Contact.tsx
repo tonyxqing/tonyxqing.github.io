@@ -1,6 +1,14 @@
 import { Box, Typography, TextField, Button } from "@mui/material";
-
+import React from "react";
 export default function Contact() {
+  const [message, setMessage] = React.useState<string>("");
+  const [email, setEmail] = React.useState<string>("");
+  const handleMessage = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setMessage(event.target.value);
+  };
+  const handleEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(event.target.value);
+  };
   return (
     <Box
       sx={{
@@ -49,6 +57,8 @@ export default function Contact() {
           variant="filled"
           label="Email"
           placeholder="boratsagdiev.NOT@email.com"
+          value={email}
+          onChange={handleEmail}
         />
 
         <TextField
@@ -60,7 +70,8 @@ export default function Contact() {
           variant="filled"
           label="Message"
           placeholder="Your message here..."
-          onClick={() => alert("this box is a WIP")}
+          value={message}
+          onChange={handleMessage}
         />
         <Button
           fullWidth
@@ -68,7 +79,7 @@ export default function Contact() {
           variant="outlined"
           target="_top"
           rel="noopener noreferrer"
-          href={`mailto:tony.qing+website@gmail.com`}
+          href={`mailto:tony.qing+website@gmail.com?cc=${email}&subject=&body=${message}`}
         >
           Send
         </Button>
