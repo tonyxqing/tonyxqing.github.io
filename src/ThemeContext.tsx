@@ -22,7 +22,12 @@ export function useColorPicker() {
 }
 
 export default function ThemeContext({ children }: { children: JSX.Element }) {
-  const [mode, setMode] = React.useState<PaletteMode>("light");
+  const [mode, setMode] = React.useState<PaletteMode>(() => {
+    const saved = localStorage.getItem("setdarkmode");
+    const loaded = JSON.parse(saved!);
+    return loaded || "light";
+  });
+
   const ColorMode = React.useMemo(
     () => ({
       // The dark mode switch would invoke this method
@@ -36,11 +41,31 @@ export default function ThemeContext({ children }: { children: JSX.Element }) {
   );
   console.log("yo I just re rendered");
 
-  const [main, setMain] = React.useState(createColor("#FDF9BB"));
-  const [background, setBackground] = React.useState(createColor("#FCFCE3"));
-  const [paper, setPaper] = React.useState(createColor("#F1E0AC"));
-  const [primary, setPrimary] = React.useState(createColor("#B1953A"));
-  const [secondary, setSecondary] = React.useState(createColor("#1C0101"));
+  const [main, setMain] = React.useState(() => {
+    const saved = localStorage.getItem("setmain");
+    const loaded = JSON.parse(saved!);
+    return loaded || createColor("#FDF9BB");
+  });
+  const [background, setBackground] = React.useState(() => {
+    const saved = localStorage.getItem("setbackground");
+    const loaded = JSON.parse(saved!);
+    return loaded || createColor("#FCFCE3");
+  });
+  const [paper, setPaper] = React.useState(() => {
+    const saved = localStorage.getItem("setpaper");
+    const loaded = JSON.parse(saved!);
+    return loaded || createColor("#F1E0AC");
+  });
+  const [primary, setPrimary] = React.useState(() => {
+    const saved = localStorage.getItem("setprimary");
+    const loaded = JSON.parse(saved!);
+    return loaded || createColor("#B1953A");
+  });
+  const [secondary, setSecondary] = React.useState(() => {
+    const saved = localStorage.getItem("setsecondary");
+    const loaded = JSON.parse(saved!);
+    return loaded || createColor("#1C0101");
+  });
   const ColorPicker = React.useMemo(
     () => ({
       pickMainColor: (color: Color) => {
@@ -62,50 +87,62 @@ export default function ThemeContext({ children }: { children: JSX.Element }) {
     []
   );
 
-  const theme = React.useMemo(
-    () =>
-      createTheme({
-        palette: {
-          mode,
-          primary: {
-            ...grey,
-            ...(mode === "light"
-              ? {
-                  main: main.css.backgroundColor,
-                }
-              : {
-                  main: grey[900],
-                }),
-          },
+  const theme = React.useMemo(() => {
+    localStorage.setItem("setdarkmode", JSON.stringify(mode));
+    localStorage.setItem("setmain", JSON.stringify(main));
+    localStorage.setItem("setbackground", JSON.stringify(background));
+    localStorage.setItem("setpaper", JSON.stringify(paper));
+    localStorage.setItem("setprimary", JSON.stringify(primary));
+    localStorage.setItem("setsecondary", JSON.stringify(secondary));
+
+    return createTheme({
+      palette: {
+        mode,
+        primary: {
+          ...grey,
           ...(mode === "light"
             ? {
-                background: {
-                  default: background.css.backgroundColor,
-                  paper: paper.css.backgroundColor,
-                },
+                main: main.css.backgroundColor,
               }
             : {
-                background: {
-                  default: grey[700],
-                  paper: grey[700],
-                },
+                main: grey[900],
               }),
-          text: {
-            ...(mode === "light"
-              ? {
-                  primary: primary.css.backgroundColor,
-                  secondary: secondary.css.backgroundColor,
-                }
-              : {
-                  primary: grey[300],
-                  secondary: grey[200],
-                }),
-          },
         },
-      }),
-    [mode, main, background, paper, primary, secondary]
-  );
-
+        ...(mode === "light"
+          ? {
+              background: {
+                default: background.css.backgroundColor,
+                paper: paper.css.backgroundColor,
+              },
+            }
+          : {
+              background: {
+                default: grey[700],
+                paper: grey[700],
+              },
+            }),
+        text: {
+          ...(mode === "light"
+            ? {
+                primary: primary.css.backgroundColor,
+                secondary: secondary.css.backgroundColor,
+              }
+            : {
+                primary: grey[300],
+                secondary: grey[200],
+              }),
+        },
+      },
+    });
+  }, [mode, main, background, paper, primary, secondary]);
+  React.useEffect(() => {}, [
+    mode,
+    main,
+    background,
+    paper,
+    primary,
+    secondary,
+  ]);
   return (
     <ColorPickerContext.Provider value={ColorPicker}>
       <ColorModeContext.Provider value={ColorMode}>

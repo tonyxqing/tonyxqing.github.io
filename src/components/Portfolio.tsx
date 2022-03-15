@@ -51,7 +51,7 @@ const forFun: portfolioProps[] = [
     desc: "recursion?",
     image: RecursionImage,
     alt: "image of tradcotracker homepage",
-    href: "tonyxqing.github.io/portfolio",
+    href: "/portfolio",
   },
 ];
 
@@ -94,36 +94,42 @@ export default function Portfolio() {
         alignText: "center",
       }}
     >
-      <Typography align="center" variant="h3" color="text.primary">
-        Portfolio
-      </Typography>
-      <Divider sx={{ margin: 3 }} />
-      <Box
-        sx={{
-          display: "grid",
-          justifyContent: "space-evenly",
-          textAlign: "right",
-          paddingRight: 12,
-          gridTemplateColumns: "40% 40% ",
-        }}
-      >
-        <Box>
-          <Typography noWrap variant="h6" color="text.primary">
-            Academic Projects
-          </Typography>
-          <Divider sx={{ margin: 2 }} />
-          {academicItems.map((item) => (
-            <PortfolioItem {...item} />
-          ))}
-        </Box>
-        <Box>
-          <Typography noWrap variant="h6" color="text.primary">
-            For fun
-          </Typography>
-          <Divider sx={{ margin: 2 }} />
-          {forFun.map((item) => (
-            <PortfolioItem {...item} />
-          ))}
+      <Box>
+        <Typography align="center" variant="h3" color="text.secondary">
+          Portfolio
+        </Typography>
+        <Divider sx={{ margin: 3 }} />
+        <Box
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "space-evenly",
+            textAlign: "right",
+          }}
+        >
+          <Box>
+            <Typography
+              noWrap
+              align="center"
+              variant="h5"
+              color="text.secondary"
+            >
+              Academic Projects
+            </Typography>
+            <Divider sx={{ margin: 2 }} />
+            {academicItems.map((item) => (
+              <PortfolioItem {...item} />
+            ))}
+          </Box>
+          <Box>
+            <Typography noWrap align="center" variant="h5" color="text.primary">
+              For fun
+            </Typography>
+            <Divider sx={{ margin: 2 }} />
+            {forFun.map((item) => (
+              <PortfolioItem {...item} />
+            ))}
+          </Box>
         </Box>
       </Box>
     </Box>
