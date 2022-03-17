@@ -62,7 +62,7 @@ const forFun: portfolioProps[] = [
     desc: "This website was made with ReactJS using react-router and materials-ui components.",
     image: RecursionImage,
     alt: "image of tradcotracker homepage",
-    href: "/portfolio",
+    href: "/",
   },
 ];
 

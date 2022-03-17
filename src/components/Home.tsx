@@ -1,4 +1,4 @@
-import { Box, Typography, TextField, Button } from "@mui/material";
+import { Box, Typography, Divider } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import About from "./About";
 import Portfolio from "./Portfolio";
@@ -32,13 +32,18 @@ export default function Home() {
           </Typography>
         </Box>
       </Box>
-      <Box sx={{ marginTop: theme.spacing(6) }}>
+      <Divider sx={{ margin: theme.spacing(2) }} />
+      <Box>
         <About />
       </Box>
-      <Box sx={{ paddingTop: theme.spacing(6) }}>
+      <Divider sx={{ margin: theme.spacing(2) }} />
+
+      <Box>
         <Portfolio />
       </Box>
-      <Box sx={{ paddingTop: theme.spacing(6) }}>
+      <Divider sx={{ margin: theme.spacing(2) }} />
+
+      <Box>
         <Contact />
       </Box>
     </Box>

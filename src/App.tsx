@@ -343,6 +343,7 @@ function App() {
                     backgroundColor: "text.secondary",
                   }}
                   fullWidth
+                  disabled={nightMode}
                   onClick={handleColorPickerOpen}
                 >
                   Select Color
