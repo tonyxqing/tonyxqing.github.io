@@ -27,6 +27,7 @@ export default function PortfolioItem({
       sx={{
         justifyContent: "center",
         alignText: "center",
+        paddingTop: 2,
       }}
     >
       <Card
@@ -34,12 +35,12 @@ export default function PortfolioItem({
           padding: 1,
         }}
       >
-        <Typography align="center" variant="h6">
+        <Typography align="center" color="text.secondary" variant="h6">
           {title}
         </Typography>
         <CardMedia component="img" image={image} alt={alt} />
         <CardContent>
-          <Typography align="center" paragraph>
+          <Typography align="center" paragraph color="text.secondary">
             {desc}
           </Typography>
           {href ? (

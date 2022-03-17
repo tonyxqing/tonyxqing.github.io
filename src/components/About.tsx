@@ -24,6 +24,7 @@ export default function About() {
         justifyContent: "center",
         alignItems: "center",
         color: "background.default",
+        minHeight: "100vh",
       }}
     >
       <Typography
@@ -31,6 +32,7 @@ export default function About() {
           flexDirection: "row",
         }}
         variant="h3"
+        align="center"
         color="text.primary"
       >
         About

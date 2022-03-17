@@ -26,6 +26,7 @@ import { ColorPicker, createColor, Color } from "mui-color";
 import { useThemeUpdate, useColorPicker } from "./ThemeContext";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import ListItemText from "@mui/material/ListItemText";
+import { StickyNote2 } from "@mui/icons-material";
 
 const drawerWidth = 240;
 
