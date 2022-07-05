@@ -1,4 +1,4 @@
-import { Box, Typography, TextField, Button } from "@mui/material";
+import {Box, Typography, TextField, Button} from "@mui/material";
 import React from "react";
 export default function Contact() {
   const [message, setMessage] = React.useState<string>("");
@@ -17,6 +17,7 @@ export default function Contact() {
         alignItems: "center",
         height: "80vh",
         padding: 1,
+        paddingTop: "20px",
       }}
     >
       <Box
@@ -42,7 +43,7 @@ export default function Contact() {
         <TextField
           fullWidth
           size="small"
-          sx={{ paddingBottom: 1, color: "text.secondary" }}
+          sx={{paddingBottom: 1, color: "text.secondary"}}
           id="standard"
           variant="filled"
           label="Name"
@@ -52,7 +53,7 @@ export default function Contact() {
         <TextField
           fullWidth
           size="small"
-          sx={{ paddingBottom: 1 }}
+          sx={{paddingBottom: 1}}
           id="outlined"
           variant="filled"
           label="Email"
@@ -64,7 +65,7 @@ export default function Contact() {
         <TextField
           fullWidth
           multiline
-          sx={{ paddingBottom: 1 }}
+          sx={{paddingBottom: 1}}
           rows={8}
           id="outlined"
           variant="filled"

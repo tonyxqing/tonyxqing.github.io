@@ -3,7 +3,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { IconButton } from "@mui/material";
+import {IconButton} from "@mui/material";
 import Button from "@mui/material/Button";
 export default function PortfolioItem({
   type,
@@ -33,6 +33,7 @@ export default function PortfolioItem({
       <Card
         sx={{
           padding: 1,
+          backgroundColor: "primary.main",
         }}
       >
         <Typography align="center" color="text.secondary" variant="h6">

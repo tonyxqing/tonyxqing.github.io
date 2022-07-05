@@ -1,5 +1,5 @@
-import { Box, Typography, Divider } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
+import {Box, Typography, Divider} from "@mui/material";
+import {useTheme} from "@mui/material/styles";
 import About from "./About";
 import Portfolio from "./Portfolio";
 import Contact from "./Contact";
@@ -13,7 +13,6 @@ export default function Home() {
           alignSelf: "start",
           justifyContent: "center",
           alignItems: "center",
-          height: "100vh",
         }}
       >
         <Box
@@ -24,7 +23,7 @@ export default function Home() {
           }}
         >
           <Typography
-            sx={{ whiteSpace: "nowrap", textAlign: "start" }}
+            sx={{whiteSpace: "nowrap", textAlign: "start"}}
             variant="h1"
             color="text.primary"
           >
@@ -32,16 +31,16 @@ export default function Home() {
           </Typography>
         </Box>
       </Box>
-      <Divider sx={{ margin: theme.spacing(2) }} />
+      <Divider sx={{margin: theme.spacing(2)}} />
       <Box>
         <About />
       </Box>
-      <Divider sx={{ margin: theme.spacing(2) }} />
+      <Divider sx={{margin: theme.spacing(2)}} />
 
       <Box>
         <Portfolio />
       </Box>
-      <Divider sx={{ margin: theme.spacing(2) }} />
+      <Divider sx={{margin: theme.spacing(2)}} />
 
       <Box>
         <Contact />

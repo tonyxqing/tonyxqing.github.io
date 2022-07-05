@@ -1,11 +1,12 @@
 import React from "react";
-import { Box, Typography, Divider, useTheme } from "@mui/material";
+import {Box, Typography, Divider, useTheme} from "@mui/material";
 import PortfolioItem from "./PortfolioItem";
 import TradCoImage from "./Images/tradcotracker.png";
 import RecursionImage from "./Images/recycle.png";
 import SoTrendlyImage from "./Images/sotrendly.png";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import WebsiteImage from "./Images/websitev1.png";
+import GraceshopImage from "./Images/graceshop.png";
 
 interface portfolioProps {
   title: string;
@@ -44,18 +45,25 @@ const academicItems: portfolioProps[] = [
       "news API",
     ],
   },
-];
-
-const forFun: portfolioProps[] = [
   {
     title: "Personal webpage v1",
-    type: "for fun",
+    type: "academic",
     desc: "personal website made with just HTML, CSS, and JavaScript.",
     image: WebsiteImage,
     alt: "image of personal website version 1",
     href: "https://people.tamu.edu/~tony.qing/",
   },
+];
 
+const forFun: portfolioProps[] = [
+  {
+    title: "Grace Shop",
+    type: "for fun",
+    desc: "This mock shopping site was made with ReactJs utitlizing a context provider to manage state. Payments are powered by Stripe. Using Firebase to deploy and manage data.",
+    image: GraceshopImage,
+    alt: "image of grace shop login",
+    href: "https://grace-shop-95023.web.app/",
+  },
   {
     title: "Personal webpage v2",
     type: "for fun",
@@ -63,35 +71,6 @@ const forFun: portfolioProps[] = [
     image: RecursionImage,
     alt: "image of tradcotracker homepage",
     href: "/",
-  },
-];
-
-const projectItems: portfolioProps[] = [
-  {
-    title: "Traditions Council Tracker",
-    type: "academic",
-    desc: "team project aimed at designing system for a school organization to automate time consuming tasks.",
-    href: "https://traditions-council-tracker.herokuapp.com/",
-    image: TradCoImage,
-    alt: "image of tradcotracker homepage",
-    techStack: ["Ruby on Rails", "Postgres", "Heroku", "Github"],
-  },
-
-  {
-    title: "SoTrendly",
-    type: "academic",
-    desc: "",
-    href: "",
-    image: "./Images/tradco-tracker.PNG",
-    alt: "image of SoTrendly homepage",
-    techStack: [
-      "javascript",
-      "HTML",
-      "CSS",
-      "twitter API",
-      "youtube API",
-      "news API",
-    ],
   },
 ];
 
@@ -111,7 +90,7 @@ export default function Portfolio() {
         <Typography align="center" variant="h3" color="text.primary">
           Portfolio
         </Typography>
-        <Divider sx={{ margin: 3 }} />
+        <Divider sx={{margin: 3}} />
         <Box
           sx={{
             display: matches ? "grid" : "flex",
@@ -125,7 +104,7 @@ export default function Portfolio() {
             <Typography noWrap align="center" variant="h5" color="text.primary">
               Academic Projects
             </Typography>
-            <Divider sx={{ margin: 2 }} />
+            <Divider sx={{margin: 2}} />
             {academicItems.map((item) => (
               <PortfolioItem {...item} />
             ))}
@@ -134,7 +113,7 @@ export default function Portfolio() {
             <Typography noWrap align="center" variant="h5" color="text.primary">
               For fun
             </Typography>
-            <Divider sx={{ margin: 2 }} />
+            <Divider sx={{margin: 2}} />
             {forFun.map((item) => (
               <PortfolioItem {...item} />
             ))}
