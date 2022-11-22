@@ -28,6 +28,36 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import ListItemText from "@mui/material/ListItemText";
 import { StickyNote2 } from "@mui/icons-material";
 
+const {
+  GitHubIcon,
+  LinkedInIcon,
+  FacebookOutlinedIcon,
+  SettingsOutlinedIcon,
+  MenuIcon,
+  Brightness4Icon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  Brightness5OutlinedIcon,
+} = icons;
+
+const iconItems = [
+  {
+    iconname: "github",
+    href: "https://github.com/tonyxqing",
+    icon: <GitHubIcon />,
+  },
+  {
+    iconname: "linkedin",
+    href: "https://www.linkedin.com/in/tony-qing-123600192/",
+    icon: <LinkedInIcon />,
+  },
+  {
+    iconname: "facebook",
+    href: "https://www.facebook.com/tony.qing.904/",
+    icon: <FacebookOutlinedIcon />,
+  },
+];
+
 const drawerWidth = 240;
 
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })<{
@@ -88,36 +118,6 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   ...theme.mixins.toolbar,
   justifyContent: "flex-end",
 }));
-
-const {
-  GitHubIcon,
-  LinkedInIcon,
-  FacebookOutlinedIcon,
-  SettingsOutlinedIcon,
-  MenuIcon,
-  Brightness4Icon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  Brightness5OutlinedIcon,
-} = icons;
-
-const iconItems = [
-  {
-    iconname: "github",
-    href: "https://github.com/tonyxqing",
-    icon: <GitHubIcon />,
-  },
-  {
-    iconname: "linkedin",
-    href: "https://www.linkedin.com/in/tony-qing-123600192/",
-    icon: <LinkedInIcon />,
-  },
-  {
-    iconname: "facebook",
-    href: "https://www.facebook.com/tony.qing.904/",
-    icon: <FacebookOutlinedIcon />,
-  },
-];
 
 function App() {
   const theme = useTheme();
