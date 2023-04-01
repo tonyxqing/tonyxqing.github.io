@@ -27,7 +27,7 @@ export default function Home() {
             textAlign={'end'}
             color="text.primary"
             >
-              and I'm learning to code.
+              and I just learned how to code.
             </Typography>
         </Box>
       </Box>
