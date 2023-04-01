@@ -78,14 +78,7 @@ export default function Portfolio() {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up("sm"));
   return (
-    <Box
-      sx={{
-        justifyContent: "center",
-        alignItems: "center",
-        color: "background.default",
-        alignText: "center",
-      }}
-    >
+    <Box>
       <Box>
         <Typography align="center" variant="h3" color="text.primary">
           Portfolio

@@ -20,11 +20,7 @@ export default function About() {
   return (
     <Box
       sx={{
-        display: "grid",
-        justifyContent: "center",
-        alignItems: "center",
         color: "background.default",
-        minHeight: "100vh",
       }}
     >
       <Typography
@@ -51,7 +47,7 @@ export default function About() {
         }}
       >
         <Typography color="text.secondary" sx={{fontSize: 18}} paragraph>
-          Hello my name is Tony, and I was raised in College Station, Texas. I
+          I was raised in College Station, Texas. I
           am excited to be marrying my best friend and moving to Chicago this
           summer. Her name is Grace and she goes to Northwestern and we own a
           cat named Cleo. When I have spare time I like to code, cook, or drive

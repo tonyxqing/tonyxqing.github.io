@@ -3,32 +3,32 @@ import {useTheme} from "@mui/material/styles";
 import About from "./About";
 import Portfolio from "./Portfolio";
 import Contact from "./Contact";
+import { useEffect, useState } from "react";
 export default function Home() {
   const theme = useTheme();
   return (
     <Box>
-      <Box
-        sx={{
-          display: "grid",
-          alignSelf: "start",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <Box
-          component="form"
-          sx={{
-            width: "100%",
-            alignItems: "center",
-          }}
-        >
+      <Box display="flex" justifyContent={"center"}>
+        <Box display="inline-block">
           <Typography
-            sx={{whiteSpace: "nowrap", textAlign: "start"}}
+            sx={{ alignSelf: 'start'}}
+            color="text.primary">
+              Hello, my name is
+          </Typography>
+          <Typography
             variant="h1"
             color="text.primary"
-          >
-            Howdy
-          </Typography>
+            textAlign={"center"}>
+
+            Tony Qing
+            </Typography>
+            <Typography
+            sx={{ alignSelf: 'end'}}
+            textAlign={'end'}
+            color="text.primary"
+            >
+              and I'm learning to code.
+            </Typography>
         </Box>
       </Box>
       <Divider sx={{margin: theme.spacing(2)}} />
@@ -41,7 +41,6 @@ export default function Home() {
         <Portfolio />
       </Box>
       <Divider sx={{margin: theme.spacing(2)}} />
-
       <Box>
         <Contact />
       </Box>

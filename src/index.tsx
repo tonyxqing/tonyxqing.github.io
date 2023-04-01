@@ -5,7 +5,6 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./components/About";
-import Frogger from "./components/Frogger";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
@@ -21,9 +20,6 @@ ReactDOM.render(
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="portfolio" element={<Portfolio />} />
-            <Route path="demos" element={<Frogger />}>
-              <Route path=":MeshType" element={<Frogger />} />
-            </Route>
             <Route path="contact" element={<Contact />} />
             <Route path="*" element={<PageNotFound />} />
           </Route>

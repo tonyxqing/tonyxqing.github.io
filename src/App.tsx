@@ -18,21 +18,18 @@ import {
   Dialog,
   DialogTitle,
   DialogContent,
-  DialogContentText,
   ToggleButton,
   ToggleButtonGroup,
 } from "@mui/material";
-import { ColorPicker, createColor, Color } from "mui-color";
+import { ColorPicker, Color } from "mui-color";
 import { useThemeUpdate, useColorPicker } from "./ThemeContext";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import ListItemText from "@mui/material/ListItemText";
-import { StickyNote2 } from "@mui/icons-material";
 
 const {
   GitHubIcon,
   LinkedInIcon,
   FacebookOutlinedIcon,
-  SettingsOutlinedIcon,
   MenuIcon,
   Brightness4Icon,
   ChevronLeftIcon,
@@ -127,9 +124,7 @@ function App() {
   const handleDrawerClose = () => setOpenDrawer(false);
 
   const [openColorPicker, setOpenColorPicker] = useState<boolean>(false);
-  const handleColorPickerOpen = () => {
-    setOpenColorPicker(true);
-  };
+
   const handleColorPickerClose = () => {
     setOpenColorPicker(false);
   };
@@ -336,18 +331,6 @@ function App() {
                   border: "text.secondary",
                 }}
               >
-                <Button
-                  variant="outlined"
-                  sx={{
-                    marginTop: theme.spacing(2),
-                    backgroundColor: "text.secondary",
-                  }}
-                  fullWidth
-                  disabled={nightMode}
-                  onClick={handleColorPickerOpen}
-                >
-                  Select Color
-                </Button>
               </Box>
               <Dialog
                 hideBackdrop
@@ -380,7 +363,6 @@ function App() {
               </Dialog>
             </List>
             <div style={{ flexGrow: 1 }}></div>
-
             <Box
               sx={{
                 display: "flex",
