@@ -1,12 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.7098178c.css",
-    "main.js": "/static/js/main.809798ef.js",
+    "main.js": "/static/js/main.83ae6be0.js",
     "static/js/787.f8ba0903.chunk.js": "/static/js/787.f8ba0903.chunk.js",
     "static/media/cleo.png": "/static/media/cleo.900e15ae3a44ccf26b3a.png",
     "static/media/websitev1.png": "/static/media/websitev1.ded4026edf8a535ab932.png",
+    "static/media/yellow-mobile.jpg": "/static/media/yellow-mobile.e7be81449937403c71d4.jpg",
     "static/media/yellow-valley.jpg": "/static/media/yellow-valley.12dcc3e2bd257edfd2b4.jpg",
     "static/media/grey-horse.jpg": "/static/media/grey-horse.0fa293cb459e2cf277f2.jpg",
+    "static/media/grey-mobile.jpg": "/static/media/grey-mobile.a361f1136b87916af822.jpg",
     "static/media/sotrendly.png": "/static/media/sotrendly.a2f652b5c9c3cc0c7538.png",
     "static/media/prom.png": "/static/media/prom.0bb05e4bab6390486a62.png",
     "static/media/yellow-leaf.jpg": "/static/media/yellow-leaf.c7ee21418aab38b889b2.jpg",
@@ -18,11 +20,11 @@
     "static/media/recycle.png": "/static/media/recycle.9533cac3153aea581315.png",
     "index.html": "/index.html",
     "main.7098178c.css.map": "/static/css/main.7098178c.css.map",
-    "main.809798ef.js.map": "/static/js/main.809798ef.js.map",
+    "main.83ae6be0.js.map": "/static/js/main.83ae6be0.js.map",
     "787.f8ba0903.chunk.js.map": "/static/js/787.f8ba0903.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7098178c.css",
-    "static/js/main.809798ef.js"
+    "static/js/main.83ae6be0.js"
   ]
 }

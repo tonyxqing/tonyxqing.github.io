@@ -61,7 +61,6 @@ const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })<{
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
   }),
-  marginLeft: `-${drawerWidth}px`,
   ...(open && {
     background: theme.palette.background.default,
     color: theme.palette.background.default,
@@ -312,11 +311,7 @@ function App() {
       >
         <Box
           sx={{
-            justifyContent: "start",
-            textAlign: "start",
-            paddingLeft: theme.spacing(27),
-            background: theme.palette.background.default,
-            margin: theme.spacing(4),
+            justifyContent: "center",
           }}
         >
           <Outlet />
