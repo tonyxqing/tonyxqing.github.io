@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { styled, useTheme } from "@mui/material/styles";
 import { Link, Outlet } from "react-router-dom";
 import { icons } from "./icons";
@@ -10,19 +10,12 @@ import {
   Button,
   IconButton,
   Drawer,
-  Divider,
   List,
   FormControlLabel,
   Switch,
   ListItem,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  ToggleButton,
-  ToggleButtonGroup,
 } from "@mui/material";
-import { ColorPicker, Color } from "mui-color";
-import { useThemeUpdate, useColorPicker } from "./ThemeContext";
+import { useThemeUpdate } from "./ThemeContext";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import ListItemText from "@mui/material/ListItemText";
 
@@ -122,15 +115,6 @@ function App() {
   const [openDrawer, setOpenDrawer] = useState<boolean>(false);
   const handleDrawerOpen = () => setOpenDrawer(true);
   const handleDrawerClose = () => setOpenDrawer(false);
-
-  const [openColorPicker, setOpenColorPicker] = useState<boolean>(false);
-
-  const handleColorPickerClose = () => {
-    setOpenColorPicker(false);
-  };
-
-  const chooseColor = useColorPicker();
-
   const [nightMode, setNightMode] = useState<boolean>(() => {
     const saved = localStorage.getItem("nightmode");
     const loaded = JSON.parse(saved!);
@@ -141,46 +125,7 @@ function App() {
     localStorage.setItem("nightmode", JSON.stringify(nightMode));
   }, [nightMode]);
   const matches = useMediaQuery(theme.breakpoints.up("sm"));
-  const [pickToggleBtn, setPickToggleBtn] = React.useState<{
-    name: string;
-    color: any;
-    update: (color: Color) => void;
-  }>({
-    name: "border",
-    color: theme.palette.primary.main,
-    update: chooseColor.pickMainColor,
-  });
-  const colorPickerItems = [
-    {
-      name: "border",
-      color: theme.palette.primary.main,
-      update: chooseColor.pickMainColor,
-    },
-    {
-      name: "background",
-      color: theme.palette.background.default,
-      update: chooseColor.pickDefaultColor,
-    },
-
-    {
-      name: "text",
-      color: theme.palette.text.primary,
-      update: chooseColor.pickPrimaryColor,
-    },
-    {
-      name: "subtext",
-      color: theme.palette.text.secondary,
-
-      update: chooseColor.pickSecondaryColor,
-    },
-    {
-      name: "this",
-      color: theme.palette.background.paper,
-      update: chooseColor.pickPaperColor,
-    },
-  ];
   const toggleTheme = useThemeUpdate();
-
   return (
     <div className="App">
       <ClickAwayListener onClickAway={handleDrawerClose}>
@@ -285,7 +230,6 @@ function App() {
                 )}
               </IconButton>
             </DrawerHeader>
-            <Divider />
             <FormControlLabel
               sx={{
                 justifyContent: "start",
@@ -304,7 +248,6 @@ function App() {
                 toggleTheme.toggleColorMode();
               }}
             />
-            <Divider />
             <List>
               {["", "About", "Portfolio", "Contact"].map((text) => (
                 <Link
@@ -323,7 +266,6 @@ function App() {
                 </Link>
               ))}
 
-              <Divider />
               <Box
                 sx={{
                   paddingLeft: theme.spacing(2),
@@ -332,35 +274,7 @@ function App() {
                 }}
               >
               </Box>
-              <Dialog
-                hideBackdrop
-                open={openColorPicker}
-                onClose={handleColorPickerClose}
-              >
-                <DialogTitle>Pick a color</DialogTitle>
-                <DialogContent>
-                  <ToggleButtonGroup
-                    value={pickToggleBtn}
-                    exclusive
-                    onChange={(e, val) => {
-                      setPickToggleBtn(val);
-                    }}
-                  >
-                    {colorPickerItems.map((item) => {
-                      return (
-                        <ToggleButton value={item}>{item.name}</ToggleButton>
-                      );
-                    })}
-                  </ToggleButtonGroup>
-                  <Divider sx={{ margin: theme.spacing(2) }} />
-                  <ColorPicker
-                    value={pickToggleBtn.color}
-                    onChange={(color: any) => {
-                      pickToggleBtn.update(color);
-                    }}
-                  ></ColorPicker>
-                </DialogContent>
-              </Dialog>
+
             </List>
             <div style={{ flexGrow: 1 }}></div>
             <Box

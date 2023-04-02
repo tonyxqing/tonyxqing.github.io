@@ -1,12 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.7098178c.css",
-    "main.js": "/static/js/main.6a545fe7.js",
+    "main.js": "/static/js/main.809798ef.js",
     "static/js/787.f8ba0903.chunk.js": "/static/js/787.f8ba0903.chunk.js",
     "static/media/cleo.png": "/static/media/cleo.900e15ae3a44ccf26b3a.png",
     "static/media/websitev1.png": "/static/media/websitev1.ded4026edf8a535ab932.png",
+    "static/media/yellow-valley.jpg": "/static/media/yellow-valley.12dcc3e2bd257edfd2b4.jpg",
+    "static/media/grey-horse.jpg": "/static/media/grey-horse.0fa293cb459e2cf277f2.jpg",
     "static/media/sotrendly.png": "/static/media/sotrendly.a2f652b5c9c3cc0c7538.png",
     "static/media/prom.png": "/static/media/prom.0bb05e4bab6390486a62.png",
+    "static/media/yellow-leaf.jpg": "/static/media/yellow-leaf.c7ee21418aab38b889b2.jpg",
+    "static/media/moon.jpg": "/static/media/moon.306f8fae6146c3b94c8e.jpg",
     "static/media/bean.png": "/static/media/bean.8a1d63fc295de272cf5b.png",
     "static/media/renaisance.png": "/static/media/renaisance.28940619fda5bb534b31.png",
     "static/media/tradcotracker.png": "/static/media/tradcotracker.1f90a9914e42545fb121.png",
@@ -14,11 +18,11 @@
     "static/media/recycle.png": "/static/media/recycle.9533cac3153aea581315.png",
     "index.html": "/index.html",
     "main.7098178c.css.map": "/static/css/main.7098178c.css.map",
-    "main.6a545fe7.js.map": "/static/js/main.6a545fe7.js.map",
+    "main.809798ef.js.map": "/static/js/main.809798ef.js.map",
     "787.f8ba0903.chunk.js.map": "/static/js/787.f8ba0903.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7098178c.css",
-    "static/js/main.6a545fe7.js"
+    "static/js/main.809798ef.js"
   ]
 }

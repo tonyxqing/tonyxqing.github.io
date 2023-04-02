@@ -1,7 +1,6 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import Divider from "@mui/material/Divider";
 import PromImage from "./Images/prom.png";
 import RennaisanceImage from "./Images/renaisance.png";
 import CleoImage from "./Images/cleo.png";
@@ -33,11 +32,7 @@ export default function About() {
       >
         About
       </Typography>
-      <Divider
-        sx={{
-          paddingTop: "20px",
-        }}
-      />
+
       <Box
         sx={{
           padding: "30px",

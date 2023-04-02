@@ -22,6 +22,5 @@
   },
   "include": [
     "src",
-    "index.d.ts"
-, "../Frogger", "../Frogger.tsx"  ]
+    "index.d.ts" ]
 }

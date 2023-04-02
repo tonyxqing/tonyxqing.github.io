@@ -5,20 +5,8 @@ import { Color, createColor } from "mui-color";
 import { grey } from "@mui/material/colors";
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
-const ColorPickerContext = React.createContext({
-  pickMainColor: (color: Color) => {},
-  pickDefaultColor: (color: Color) => {},
-  pickPaperColor: (color: Color) => {},
-  pickPrimaryColor: (color: Color) => {},
-  pickSecondaryColor: (color: Color) => {},
-});
-
 export function useThemeUpdate() {
   return useContext(ColorModeContext);
-}
-
-export function useColorPicker() {
-  return useContext(ColorPickerContext);
 }
 
 export default function ThemeContext({ children }: { children: JSX.Element }) {
@@ -39,8 +27,6 @@ export default function ThemeContext({ children }: { children: JSX.Element }) {
     }),
     []
   );
-  console.log("yo I just re rendered");
-
   const [main, setMain] = React.useState(() => {
     const saved = localStorage.getItem("setmain");
     const loaded = JSON.parse(saved!);
@@ -144,10 +130,8 @@ export default function ThemeContext({ children }: { children: JSX.Element }) {
     secondary,
   ]);
   return (
-    <ColorPickerContext.Provider value={ColorPicker}>
       <ColorModeContext.Provider value={ColorMode}>
         <ThemeProvider theme={theme}>{children}</ThemeProvider>
       </ColorModeContext.Provider>
-    </ColorPickerContext.Provider>
   );
 }

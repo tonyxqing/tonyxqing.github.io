@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Typography, Divider, useTheme} from "@mui/material";
+import {Box, Typography, useTheme} from "@mui/material";
 import PortfolioItem from "./PortfolioItem";
 import TradCoImage from "./Images/tradcotracker.png";
 import RecursionImage from "./Images/recycle.png";
@@ -83,7 +83,6 @@ export default function Portfolio() {
         <Typography align="center" variant="h3" color="text.primary">
           Portfolio
         </Typography>
-        <Divider sx={{margin: 3}} />
         <Box
           sx={{
             display: matches ? "grid" : "flex",
@@ -97,7 +96,6 @@ export default function Portfolio() {
             <Typography noWrap align="center" variant="h5" color="text.primary">
               Academic Projects
             </Typography>
-            <Divider sx={{margin: 2}} />
             {academicItems.map((item) => (
               <PortfolioItem {...item} />
             ))}
@@ -106,7 +104,6 @@ export default function Portfolio() {
             <Typography noWrap align="center" variant="h5" color="text.primary">
               For fun
             </Typography>
-            <Divider sx={{margin: 2}} />
             {forFun.map((item) => (
               <PortfolioItem {...item} />
             ))}
