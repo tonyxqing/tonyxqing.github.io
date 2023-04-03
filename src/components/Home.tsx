@@ -28,7 +28,7 @@ export default function Home() {
   const mode = theme.palette.mode;
   return (
     <Box >
-      <Box display="flex"  justifyContent={"center"} alignItems={"center"} height={matches ? "90vh" : "70vh"} >
+      <Box marginTop="1rem" display="flex"  justifyContent={"center"} alignItems={"center"} height={matches ? "90vh" : "70vh"} >
           <Box width="min-content" display="inline-block" zIndex={1}>
             <Typography              
               sx={{transform: "translate(0, 2rem)", 

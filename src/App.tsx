@@ -153,7 +153,7 @@ function App() {
                 <Box display="flex" gap="1rem" justifyContent={"space-evenly"} width="100%" height="100%">
                   {["Home", "About", "Portfolio", "Contact"].map((text) => (
                       <a className="top-menu" href={`#${text}`}>
-                                   <Typography flex={1} textAlign={"center"} height="100%" fontWeight={800} fontSize="1.5rem" color="text.primary">
+                                   <Typography padding={1} flex={1} textAlign={"center"} height="100%" fontWeight={800} fontSize="1.5rem" color="text.primary">
                       {text}
                     </Typography>
                       </a>
@@ -233,8 +233,9 @@ function App() {
             </DrawerHeader>
             <FormControlLabel
               sx={{
+                paddingTop:"1.5rem",
                 justifyContent: "start",
-                alignItems: !matches ? "center" : "end",
+                alignItems: "end",
                 color: "text.primary",
               }}
               value="night mode"
