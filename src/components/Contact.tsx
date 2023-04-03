@@ -27,6 +27,7 @@ export default function Contact() {
         }}
       >
         <Typography
+        id="Contact"
           sx={{
             whiteSpace: "nowrap",
             textAlign: "end",

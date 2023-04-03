@@ -80,7 +80,7 @@ export default function Portfolio() {
   return (
     <Box marginTop="3rem" > 
       <Box>
-        <Typography fontWeight={800} marginBottom="1rem" align="center" variant="h3" color="text.primary">
+        <Typography id="Portfolio" fontWeight={800} marginBottom="1rem" align="center" variant="h3" color="text.primary">
           Portfolio
         </Typography>
         <Box

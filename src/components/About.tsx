@@ -48,6 +48,7 @@ export default function About() {
         }}
       >
       <Typography
+        id="About"
         fontWeight={800}
         variant="h3"
         align="center"

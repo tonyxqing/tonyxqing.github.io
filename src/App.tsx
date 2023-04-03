@@ -7,17 +7,17 @@ import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 import {
   Box,
   Toolbar,
-  Button,
   IconButton,
   Drawer,
   List,
   FormControlLabel,
   Switch,
-  ListItem,
+  Typography,
 } from "@mui/material";
 import { useThemeUpdate } from "./ThemeContext";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import ListItemText from "@mui/material/ListItemText";
+import "./App.css"
+
 
 const {
   GitHubIcon,
@@ -129,9 +129,10 @@ function App() {
     <div className="App">
       <ClickAwayListener onClickAway={handleDrawerClose}>
         <Box>
-          <AppBar position="static" open={openDrawer}>
-            <Toolbar sx={{ backgroundColor: "primary.main" }}>
+          <AppBar position="fixed" open={openDrawer}>
+            <Toolbar sx={{ backgroundColor: "primary.main"}}>
               {!matches ? (
+                <Box width="100%" display={"flex"} justifyContent={"space-between"} alignItems={"center"}>
                 <IconButton
                   sx={{
                     color: "text.primary",
@@ -143,21 +144,22 @@ function App() {
                 >
                   <MenuIcon />
                 </IconButton>
+                <Typography fontWeight="800" fontSize="1.5rem" color="text.primary">
+                  TQ
+                </Typography>
+                </Box>
               ) : (
                 <>
-                  {["", "About", "Portfolio", "Contact"].map((text) => (
-                    <Link to={`/${text.toLowerCase()}`}>
-                      <Button
-                        sx={{
-                          color: "text.primary",
-                          textTransform: "capitalize",
-                          fontWeight: "bold",
-                        }}
-                      >
-                        {text === "" ? "Home" : text}
-                      </Button>
-                    </Link>
+                <Box display="flex" gap="1rem" justifyContent={"space-evenly"} width="100%" height="100%">
+                  {["Home", "About", "Portfolio", "Contact"].map((text) => (
+                      <a className="top-menu" href={`#${text}`}>
+                                   <Typography flex={1} textAlign={"center"} height="100%" fontWeight={800} fontSize="1.5rem" color="text.primary">
+                      {text}
+                    </Typography>
+                      </a>
                   ))}
+                </Box>
+
                   <div style={{ flexGrow: 1 }}></div>
                   <FormControlLabel
                     sx={{
@@ -247,22 +249,13 @@ function App() {
                 toggleTheme.toggleColorMode();
               }}
             />
-            <List>
-              {["", "About", "Portfolio", "Contact"].map((text) => (
-                <Link
-                  style={{ textDecoration: "none" }}
-                  to={`/${text.toLowerCase()}`}
-                >
-                  <ListItem
-                    button
-                    key={text}
-                    sx={{ color: "text.primary", textTransform: "capitalize" }}
-                  >
-                    <ListItemText
-                      primary={text === "" ? "Home" : text}
-                    ></ListItemText>
-                  </ListItem>
-                </Link>
+            <List sx={{display: "flex", flexDirection: "column",}}>
+              {["Home", "About", "Portfolio", "Contact"].map((text) => (
+                  <a className="side-menu" href={`#${text}`}>
+                    <Typography padding="1rem" fontWeight={800} fontSize="2rem" color="text.primary">
+                      {text}
+                    </Typography>
+                  </a>
               ))}
 
               <Box
@@ -304,6 +297,7 @@ function App() {
       </ClickAwayListener>
 
       <Main
+        id="Home"
         open={openDrawer}
         sx={{
           backgroundColor: theme.palette.background.default,

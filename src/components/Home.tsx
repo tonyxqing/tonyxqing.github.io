@@ -71,7 +71,7 @@ export default function Home() {
         </Box>
       </Box>
       <Box sx={{paddingTop: "8px"}}>
-        <About />
+        <About/>
       </Box>
       <Box>
         <Portfolio />
