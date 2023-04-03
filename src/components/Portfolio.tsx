@@ -78,9 +78,9 @@ export default function Portfolio() {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up("sm"));
   return (
-    <Box>
+    <Box marginTop="3rem" > 
       <Box>
-        <Typography align="center" variant="h3" color="text.primary">
+        <Typography fontWeight={800} marginBottom="1rem" align="center" variant="h3" color="text.primary">
           Portfolio
         </Typography>
         <Box
@@ -93,7 +93,7 @@ export default function Portfolio() {
           }}
         >
           <Box>
-            <Typography noWrap align="center" variant="h5" color="text.primary">
+            <Typography noWrap align="center" variant="h5" color="text.primary" fontWeight={800} marginTop={"1rem"}>
               Academic Projects
             </Typography>
             {academicItems.map((item) => (
@@ -101,7 +101,7 @@ export default function Portfolio() {
             ))}
           </Box>
           <Box>
-            <Typography noWrap align="center" variant="h5" color="text.primary">
+            <Typography noWrap align="center" variant="h5" color="text.primary" fontWeight={800} marginTop={"1rem"}>
               For fun
             </Typography>
             {forFun.map((item) => (

@@ -7,40 +7,55 @@ import CleoImage from "./Images/cleo.png";
 import BeanImage from "./Images/bean.png";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
+import farquadImage from "./Images/farquad.jpg";
+import comoconservator from "./Images/comoconservator.jpg";
+import pestopizza from "./Images/pestopizza.jpg";
+import cleodrive from "./Images/cleodrive.jpg";
+import minionkiss from "./Images/minionkiss.png";
+import cleowasher from "./Images/cleowasher.png";
+import { useMediaQuery, useTheme } from "@mui/material";
+
 
 const images = [
   {img: PromImage, title: "prom 2018"},
   {img: RennaisanceImage, title: "renfest 2021"},
   {img: CleoImage, title: "our cat"},
   {img: BeanImage, title: "I lifted the bean"},
+  {img: farquadImage, title: "grace and farquad"},
+  {img: comoconservator, title: "conservatory pic"},
+  {img: pestopizza, title: "picture of pizza"},
+  {img: cleodrive, title: "cleo is participating in driving"},
+  {img: minionkiss, title: "minions cheer us on"},
+  {img: cleowasher, title: "cleo dangerously in the dryer"}
 ];
 
 export default function About() {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up("md"));
+
   return (
     <Box
       sx={{
         color: "background.default",
       }}
     >
-      <Typography
-        sx={{
-          flexDirection: "row",
-        }}
-        variant="h3"
-        align="center"
-        color="text.primary"
-      >
-        About
-      </Typography>
 
       <Box
         sx={{
           padding: "30px",
-          margin: "30px",
           backgroundColor: "primary.main",
           borderRadius: "3px",
         }}
       >
+      <Typography
+        fontWeight={800}
+        variant="h3"
+        align="center"
+        color="text.primary"
+        marginBottom={"1rem"}
+      >
+        About
+      </Typography>
         <Typography color="text.secondary" sx={{fontSize: 18}} paragraph>
           I was raised in College Station, Texas. I
           am excited to be marrying my best friend and moving to Chicago this
@@ -52,23 +67,22 @@ export default function About() {
           me is that I was born in the year 2000.
         </Typography>
         <ImageList
-          variant="masonry"
-          sx={{alignItems: "center", justifyContent: "center"}}
-          gap={20}
-          cols={4}
+          sx={{alignItems: "center", justifyContent: "center", overflowX: "hidden"}}
+          cols={!matches ? 2 : 5}
         >
           {images.map((item) => (
             <ImageListItem
               key={item.img}
               sx={{
-                padding: "30px",
+                padding: "4px",
+                margin: "4px"
               }}
             >
               <img
                 style={{
-                  width: 164,
-                  height: 164,
-                  objectFit: "contain",
+                  width: matches ? 150 : 100,
+                  height: matches ? 250 : 200,
+                  objectFit: "cover",
                 }}
                 src={`${item.img}`}
                 srcSet={`${item.img}`}

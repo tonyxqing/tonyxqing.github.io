@@ -1,0 +1,50 @@
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+}
+
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+nav li {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+nav a {
+	color: #fff;
+	text-decoration: none;
+}
+
+main {
+	max-width: 800px;
+	margin: 20px auto;
+	padding: 0 20px;
+}
+
+article {
+	margin-bottom: 40px;
+}
+
+h1, h2 {
+	margin-top: 0;
+}
+
+figure {
+	margin: 20px 0;
+}
+
+figcaption {
+	font-style: italic;
+	margin-top: 10px;
+	text-align: center;
