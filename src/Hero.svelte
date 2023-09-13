@@ -62,7 +62,7 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        height: 100%;
+        height: 100vh;
     }
     .textCircle {
         width: 40%;
@@ -71,8 +71,9 @@
         position: absolute;
         transform-origin: center center;
         stroke-opacity: 0.75;
-        animation: rotate 35s linear infinite;
     }
+
+
 
     /* @media screen and (max-width: 1128px) {
         .textCircle {
@@ -86,6 +87,13 @@
         }
         to {
             transform: rotate(360deg);
+        }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        .textCircle {
+            animation: rotate 35s linear infinite;
+
         }
     }
     tspan {

@@ -3,7 +3,7 @@
   import Header from "./Header.svelte";
   import Footer from "./Footer.svelte";
   import Hero from "./Hero.svelte";
-    import About from "./About.svelte";
+  import About from "./About.svelte";
   let scrollLevel = 0;
 
 </script>
