@@ -22,6 +22,7 @@
     <img
         style="object-fit: cover;
         width: 100%;
+        max-height: 100vh;
         height: 100%;
         transition: all 600ms ease;"
         id="moon"
@@ -62,7 +63,8 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        height: 100vh;
+        height: 100%;
+        max-height: 100vh;
     }
     .textCircle {
         width: 40%;
