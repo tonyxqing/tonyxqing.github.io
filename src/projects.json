@@ -1,26 +1,7 @@
 {
-    "TradCoTracker": {
-        "role": "Scrum Master",
-        "description": "Automated attendance tracking system for A&M's Traditions Council",
-        "techStack": ["Ruby on Rails", "Firebase", "Heroku"],
-        "url": ""
-        
-    },
-    "SoTrendly": {
-        "role": "Frontend",
-        "description": "Web application that allows users to view popular content around the US from News, Twitter, and Youtube apis by selecting an area on a map",
-        "techStack": ["HTML, CSS, JS"],
-        "url": ""
-    },
-    "PersonalWebsites": {
-        "role": "Frontend",
-        "description": "",
-        "techStack": ["Svelte"],
-        "url": "tonyxqing.github.io"
-    },
     "ChicagoDataViz": {
         "role": "Data Science",
-        "description": "",
+        "description": "Analyzing the neighborhoods in Chicago on theft and motor theft statistics",
         "techStack": ["SvelteKit", "Python"],
         "url": "chi-data-viz.netlify.app"
     },
@@ -35,5 +16,18 @@
         "description": "Card trading game where users can take a picture of anything and it gets styled into a trading card",
         "techStack": ["React Native", "SvelteKit", "Rust"],
         "url": "https://snack.expo.dev/@tonyqing/card-trading"
+    },
+    "TradCoTracker": {
+        "role": "Scrum Master",
+        "description": "Automated attendance tracking system for A&M's Traditions Council",
+        "techStack": ["Ruby on Rails", "Firebase", "Heroku"],
+        "url": ""
+        
+    },
+    "SoTrendly": {
+        "role": "Frontend",
+        "description": "Web application that allows users to view popular content around the US from News, Twitter, and Youtube apis by selecting an area on a map",
+        "techStack": ["HTML, CSS, JS"],
+        "url": ""
     }
 }

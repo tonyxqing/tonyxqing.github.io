@@ -17,7 +17,7 @@
       helping beginners learn to code.
     </p>
   </div>
-  <div class="card">
+  <!-- <div class="card">
     <h2>Skills</h2>
     <ul class="skills">
       <h3>Programming</h3>
@@ -41,7 +41,7 @@
         <div>UI UX oriented design</div>
       </ul>
     </ul>
-  </div>
+  </div> -->
   <Banner />
 </div>
 
@@ -64,4 +64,5 @@
     display: flex;
     gap: 20px;
   }
+
 </style>

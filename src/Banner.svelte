@@ -49,12 +49,12 @@
                 <p>MongoDB</p>
             </div>
             <div>
-                <DiPostgresql />
-                <p>PostgreSQL</p>
-            </div>
-            <div>
                 <DiRust />
                 <p>Rust</p>
+            </div>
+            <div>
+                <DiPostgresql />
+                <p>PostgreSQL</p>
             </div>
         </div>
         <div class="skillsBanner">
@@ -92,12 +92,12 @@
                 <p>MongoDB</p>
             </div>
             <div>
-                <DiPostgresql />
-                <p>PostgreSQL</p>
-            </div>
-            <div>
                 <DiRust />
                 <p>Rust</p>
+            </div>
+            <div>
+                <DiPostgresql />
+                <p>PostgreSQL</p>
             </div>
         </div>
     </div>
@@ -110,27 +110,28 @@
         height: 100%;
     }
     .skillsWrapper {
-        height: 64px;
+        height: 128px;
         display: inline-flex;
         flex-wrap: nowrap;
-        gap: 30px;
-
     }
 
     .skillsBanner {
         display: none;
         height: 100%;
         width: 100%;
+        padding: 0px 12px;
     }
 
     .skillsBanner > div {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: 100px;
-        width: 100px;
+        height: 150px;
+        width: 150px;
         font-family: monospace;
+        font-size: 16px;
     }
+
 
     .skillsBanner > div > p {
         text-align: center;    
@@ -139,7 +140,7 @@
         .skillsBanner {
             display: flex;
             gap: 30px;
-            animation: marquee 20s linear infinite;
+            animation: marquee 30s linear infinite;
         }
     }
 
