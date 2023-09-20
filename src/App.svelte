@@ -54,9 +54,7 @@
     gap: 4px;
     position: fixed;
     left: 12px;
-    bottom: 0;
-    width: 100%;
-    height: 50%;
+    bottom: 50%;
   }
 
   .dot {
