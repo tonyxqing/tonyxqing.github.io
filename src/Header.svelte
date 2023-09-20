@@ -4,7 +4,7 @@
 
 <header {ref}>
     <section>
-        <div>
+        <div class="name">
         Tony Qing
         </div>
         <div class="links">
@@ -17,6 +17,9 @@
 </header>
 
 <style>
+    .name {
+        color: white
+    }
     section {
         display: flex;
         justify-content: space-between;

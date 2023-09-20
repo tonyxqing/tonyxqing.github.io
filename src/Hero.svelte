@@ -13,8 +13,8 @@
             font-size={101}
             fill="#ffffff"
             ><textPath href="#circle">
-                <tspan>Tony Qing</tspan> - Frontend - Backend - Software Developer
-                - College Station, TX - Chicago, Illinois -</textPath
+                <tspan>Tony Qing</tspan> - Frontend - UI UX - Software Developer
+                - College Station, Texas - Chicago, Illinois -</textPath
             ></text
         ></svg
     >
@@ -99,7 +99,7 @@
         }
     }
     tspan {
-        fill: #2e3053;
+        fill: #464877;
         filter: drop-shadow(0px 2px 2px rgb(254, 254, 254));
     }
 </style>

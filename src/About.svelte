@@ -14,7 +14,7 @@
       in React and React Native. In my freetime I am practicing backend skills
       using Rust and MongoDB to create the backbone of my card trading game.
       Aside from work, I love to spend time with my wife, cook new recipies, and
-      helping beginners learn to code.
+      help beginners learn to code.
     </p>
   </div>
   <!-- <div class="card">

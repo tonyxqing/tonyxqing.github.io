@@ -19,8 +19,8 @@
     export let top = 0;
     export let bottom = 0;
     export let increments = 100;
-    export let value = undefined;
-  
+    export let value = 0;
+    export let once = false;
     const steps = [];
     const threshold = [];
   
@@ -44,10 +44,17 @@
           maxIndex = i;
         }
       }
-  
-      if (maxRatio > 0) value = maxIndex;
-          else value = undefined;
-    };
+      
+      if (maxRatio > 0) {
+        if (once) {
+          value = Math.max(maxIndex, value); 
+        } else {
+          value = maxIndex;
+        }
+      } else {
+        value = 0;
+      }
+  };
   
     const createObserver = (node, index) => {
       const handleIntersect = (e) => {
@@ -82,3 +89,10 @@
     <slot />
   </div>
   
+  <style>
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 64px;
+    }
+  </style>
