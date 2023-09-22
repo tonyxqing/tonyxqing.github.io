@@ -1,19 +1,28 @@
-<script>
+<script lang="ts">
+  let name: string;
+  let message: string;
 </script>
+
 <section id="contact">
   <h1>Contact</h1>
-  <form>
+  <form id="contact_form">
     <label for="name">Name </label>
-    <input id="name" type="text" />
-    <label for="email">Email </label>
-    <input id="email" type="email" />
+    <input id="name" type="text" bind:value={name} />
     <label for="message">Message </label>
-    <textarea id="message" />
+    <textarea id="message" bind:value={message} />
+    <a
+      style={!name || !message
+        ? "pointer-events: none;"
+        : "pointer-events: auto"}
+      href={`mailto:tonyqing2022@gmail.com?subject=Hello%20from%20${encodeURI(
+        name
+      )}&body=${encodeURI(message)}`}
+      ><button type="button">Send Message</button></a
+    >
   </form>
 </section>
 
 <style>
-
   section {
     display: flex;
     flex: 1;

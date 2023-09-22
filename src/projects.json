@@ -1,33 +1,53 @@
 {
-    "ChicagoDataViz": {
+    "Chicago Data Viz": {
         "role": "Data Science",
         "description": "Analyzing the neighborhoods in Chicago on theft and motor theft statistics",
         "techStack": ["SvelteKit", "Python"],
-        "url": "chi-data-viz.netlify.app"
+        "url": "https://chidataviz.netlify.app",
+        "img": "cdv.png",
+        "source": "https://github.com/tonyxqing/chicago-theft-visualization"
     },
-    "GuidedBreathingApp": {
+    "Guided Breathing App": {
         "role": "Mobile",
         "description": "App with an adjustable breath counter and cusomizable background with audio indicators and music inspired by Wim Hof breathing method",
         "techStack": ["React Native"],
-        "url": "https://snack.expo.dev/@tonyqing/guided-breathing"
+        "url": "https://snack.expo.dev/@tonyqing/guided-breathing",
+        "img": "gba.png",
+        "mobile": true,
+        "source": "https://github.com/tonyxqing/GuidedBreathingApp"
+
     },
-    "SuperUltimateCardCollection": {
+    "Super Ultimate Card Collection": {
         "role": "Fullstack",
         "description": "Card trading game where users can take a picture of anything and it gets styled into a trading card",
         "techStack": ["React Native", "SvelteKit", "Rust"],
-        "url": "https://snack.expo.dev/@tonyqing/card-trading"
+        "url": "https://snack.expo.dev/@tonyqing/card-trading",
+        "img": "succ.png",
+        "mobile": true,
+        "source": "https://github.com/tonyxqing/card-trader"
+    },
+    "Grace Shop": {
+        "role": "Fullstack",
+        "description": "Mock E-Commerce website with account creation and functional shopping cart",
+        "techStack": ["React", "Express", "Stripe", "Firebase"],
+        "url": "https://grace-shop-95023.web.app/",
+        "img": "graceshop.png",
+        "source": "https://github.com/tonyxqing/grace-shop"
+        
     },
     "TradCoTracker": {
         "role": "Scrum Master",
         "description": "Automated attendance tracking system for A&M's Traditions Council",
         "techStack": ["Ruby on Rails", "Firebase", "Heroku"],
-        "url": ""
+        "img": "tradcotracker.png",
+        "source": "https://github.com/tonyxqing/TradCoTracker"
         
     },
     "SoTrendly": {
         "role": "Frontend",
         "description": "Web application that allows users to view popular content around the US from News, Twitter, and Youtube apis by selecting an area on a map",
         "techStack": ["HTML, CSS, JS"],
-        "url": ""
+        "img": "sotrendly.png",
+        "source": "https://github.com/tonyquing/sotrendly"
     }
 }

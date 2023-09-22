@@ -7,39 +7,51 @@
   let projects = Object.entries(PortfolioData);
 </script>
 
-<section>
+<section id="projects">
   <h1>Projects</h1>
   <div class="projectsContainer">
-    <Scrolly once={true} bind:value={scrollLevel}>
-      <div class="projectCard hidden" />
-      {#each projects as [project, data], i}
-        {#if data.url}
-          <div class="hiddenCard" >
-            {#if scrollLevel >= i + 1}
-              <a class="projectCard" transition:fly={{  duration: 500, x: 200, opacity: 0.5 }} href={data.url}>
-                <h3>{project}</h3>
-                <p>{data.description}</p>
-              </a>
-            {/if}
-          </div>
-        {:else}
-          <div class="hiddenCard">
-            {#if scrollLevel >= i + 1}
-              <div class="projectCard" transition:fly={{  duration: 500, x: 200, opacity: 0.5 }}>
-                <h3>{project}</h3>
-                <p>{data.description}</p>
-              </div>
-            {/if}
-          </div>
-        {/if}
-      {/each}
-    </Scrolly>
+    {#each projects as [project, data], i}
+      <div class="projectCard">
+        <h2>{project}</h2>
+        <p>{data.description}</p>
+        <img
+          style="border-radius: 8px; height: 300px; min-width: 280px; max-width: 780px; width: 100%; object-fit: {data.mobile
+            ? 'contain'
+            : 'cover'};"
+          alt="{project} project"
+          src={data.img}
+        />
+        <div style="display: flex; justify-content: center">
+          {#if data.url}
+            <a href={data.url}>Visit Demo</a>
+          {/if}
+          {#if data.source}
+            <a href={data.source}>Source Code</a>
+          {/if}
+        </div>
+      </div>
+    {/each}
   </div>
 </section>
 
 <style>
+  a {
+    display: flex;
+    justify-content: center;
+    margin: 8px;
+    padding: 8px;
+    align-self: center;
+    border: 1px solid rgb(117, 68, 233);
+    border-radius: 12px;
+  }
+  a:hover {
+    background: rgb(255, 217, 245);
+  }
   h1 {
     color: rgb(233, 233, 233);
+  }
+  h2 {
+    margin: 0;
   }
   section {
     display: flex;
@@ -50,47 +62,26 @@
     flex-direction: column;
   }
 
-  .hidden {
-    visibility: hidden;
-    margin-top: -250px;
-    position: absolute
+  .projectsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 80%;
+    min-width: 300px;
   }
 
-  .projectsContainer {
-    width: 65%;
-  }
-  .hiddenCard {
-    max-height: 250px;
-    min-height: 250px;
-  }
   .projectCard {
     display: flex;
-    flex: 1 1 100%;
-    min-height: 250px;
-    height: 80%;
-    max-height: 250px;
-    border: 1px solid black;
     border-radius: 8px;
-    justify-content: center;
+    min-width: 280px;
+    max-width: 780px;
+    width: 100%;
     flex-direction: column;
     padding: 24px;
-    background: rgb(0, 0, 0);
-    background: linear-gradient(
-      172deg,
-      rgb(39, 38, 38) 0%,
-      rgba(52, 50, 50, 1) 41%,
-      rgba(47, 51, 52, 1) 100%
-    );
     color: rgb(233, 233, 233);
-    transition: box-shadow 250ms linear;
   }
-
-  .projectCard p {
-    width: 60%;
-  }
-
-  .projectCard:hover {
-    border: 1px solid white;
-    box-shadow: 0px 0px 8px 4px white;
+  .projectCard > img {
+    align-self: center;
   }
 </style>

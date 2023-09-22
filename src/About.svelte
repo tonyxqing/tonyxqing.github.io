@@ -2,7 +2,7 @@
   import Banner from "./Banner.svelte";
 </script>
 
-<div id="about">
+<section id="about">
   <h1>About</h1>
   <div class="card">
     <p>
@@ -43,10 +43,10 @@
     </ul>
   </div> -->
   <Banner />
-</div>
+</section>
 
 <style>
-  #about {
+  section {
     display: flex;
     flex: 1;
     flex-direction: column;

@@ -11,7 +11,7 @@
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
-            <a href="#blog">Blog</a>
+            <!-- <a href="#blog">Blog</a> -->
         </div>
     </section>
 </header>

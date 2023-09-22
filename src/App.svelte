@@ -8,6 +8,7 @@
   import Projects from "./Projects.svelte";
   import Scrollytelling from "./Scrollytelling.svelte";
   let scrollLevel = 0;
+  let sections = ["#hero", "#about", "#projects", "#contact", ]; // add "#blog" when done
 </script>
 
 <Header ref="header" />
@@ -16,14 +17,16 @@
   <About />
   <Projects />
   <Contact />
-  <Blog />
+  <!-- <Blog /> -->
 </Scrollytelling>
 <div class="dot_navigator">
-  {#each Object.keys(Array(5).fill(0)) as dots}
-    {#if dots == scrollLevel}
-    <div class="dot active" />
+  {#each sections as dots, i}
+    {#if i === scrollLevel}
+      <a class="dot active" />
+    {:else if i === 0}
+      <div on:click={() => {scrollTo(0,0)}} class="dot pointer" />
     {:else}
-    <div class="dot" />
+      <a href={dots} class="dot" />
     {/if}
   {/each}
 </div>
@@ -49,6 +52,7 @@
   }
 
   .dot_navigator {
+    z-index: 99;
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -56,15 +60,16 @@
     left: 12px;
     bottom: 50%;
   }
-
+  .pointer {
+    cursor: pointer;
+  }
   .dot {
     aspect-ratio: 1;
     width: 8px;
     border-radius: 50%;
-    border: 1px solid rgb(26, 116, 108);
+    border: 1px solid rgb(75, 90, 160);
   }
   .active {
-    background-color: green;
+    background-color: rgb(167, 169, 175);
   }
-  
 </style>
