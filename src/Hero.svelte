@@ -33,6 +33,7 @@
         align-items: center;
         width: 100%;
         height: 100vh;
+        box-shadow: rgb(10, 11, 16) 0px 0px 100px 80px;
     }
     .text_circle {
         width: 40%;
@@ -68,6 +69,7 @@
         max-height: 100vh;
         height: 100%;
         transition: all 600ms ease;
+        
     }
     /* @media screen and (max-width: 1128px) {
         .textCircle {

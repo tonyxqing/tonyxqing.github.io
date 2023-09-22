@@ -53,7 +53,6 @@
     align-items: center;
     padding: 36px 24px;
     height: 100%;
-    box-shadow: rgb(10, 11, 16) 0px 30px 300px 300px;
   }
   .card {
     width: 65%;

@@ -23,10 +23,10 @@
         />
         <div style="display: flex; justify-content: center">
           {#if data.url}
-            <a href={data.url}>Visit Demo</a>
+            <a href={data.url}><button>Visit Demo</button></a>
           {/if}
           {#if data.source}
-            <a href={data.source}>Source Code</a>
+            <a href={data.source}><button>Source Code</button></a>
           {/if}
         </div>
       </div>
@@ -36,20 +36,9 @@
 
 <style>
   a {
-    display: flex;
-    justify-content: center;
     margin: 8px;
-    padding: 8px;
-    align-self: center;
-    border: 1px solid rgb(117, 68, 233);
-    border-radius: 12px;
   }
-  a:hover {
-    background: rgb(255, 217, 245);
-  }
-  h1 {
-    color: rgb(233, 233, 233);
-  }
+
   h2 {
     margin: 0;
   }
@@ -79,7 +68,6 @@
     width: 100%;
     flex-direction: column;
     padding: 24px;
-    color: rgb(233, 233, 233);
   }
   .projectCard > img {
     align-self: center;
